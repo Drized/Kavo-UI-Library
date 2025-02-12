@@ -1,4 +1,4 @@
-local Kavo = {}
+local Drized = {}
 
 local tween = game:GetService("TweenService")
 local tweeninfo = TweenInfo.new
@@ -7,7 +7,7 @@ local run = game:GetService("RunService")
 
 local Utility = {}
 local Objects = {}
-function Kavo:DraggingEnabled(frame, parent)
+function Drized:DraggingEnabled(frame, parent)
         
     parent = parent or frame
     
@@ -106,11 +106,11 @@ local themeStyles = {
         ElementColor = Color3.fromRGB(24, 24, 24)
     },
     Synapse = {
-        SchemeColor = Color3.fromRGB(26, 189, 158),
-        Background = Color3.fromRGB(255,0,212),
-        Header = Color3.fromRGB(182, 156, 255),
-        TextColor = Color3.fromRGB(2, 3, 1),
-        ElementColor = Color3.fromRGB(182, 156, 255)
+        SchemeColor = Color3.fromRGB(46, 48, 43),
+        Background = Color3.fromRGB(13, 15, 12),
+        Header = Color3.fromRGB(36, 38, 35),
+        TextColor = Color3.fromRGB(152, 99, 53),
+        ElementColor = Color3.fromRGB(24, 24, 24)
     },
     Serpent = {
         SchemeColor = Color3.fromRGB(0, 166, 58),
@@ -126,7 +126,7 @@ local SettingsT = {
 
 }
 
-local Name = "KavoConfig.JSON"
+local Name = "DrizedConfig.JSON"
 
 pcall(function()
 
@@ -139,7 +139,7 @@ end)
 
 local LibName = tostring(math.random(1, 100))..tostring(math.random(1,50))..tostring(math.random(1, 100))
 
-function Kavo:ToggleUI()
+function Drized:ToggleUI()
     if game.CoreGui[LibName].Enabled then
         game.CoreGui[LibName].Enabled = false
     else
@@ -147,7 +147,7 @@ function Kavo:ToggleUI()
     end
 end
 
-function Kavo.CreateLib(kavName, themeList)
+function Drized.CreateLib(kavName, themeList)
     if not themeList then
         themeList = themes
     end
@@ -186,7 +186,7 @@ function Kavo.CreateLib(kavName, themeList)
     themeList = themeList or {}
     local selectedTab 
     kavName = kavName or "Library"
-    table.insert(Kavo, kavName)
+    table.insert(Drized, kavName)
     for i,v in pairs(game.CoreGui:GetChildren()) do
         if v:IsA("ScreenGui") and v.Name == kavName then
             v:Destroy()
@@ -211,7 +211,7 @@ function Kavo.CreateLib(kavName, themeList)
 
     local blurFrame = Instance.new("Frame")
 
-    Kavo:DraggingEnabled(MainHeader, Main)
+    Drized:DraggingEnabled(MainHeader, Main)
 
     blurFrame.Name = "blurFrame"
     blurFrame.Parent = pages
@@ -352,7 +352,7 @@ function Kavo.CreateLib(kavName, themeList)
         end
     end)()
 
-    function Kavo:ChangeColor(prope,color)
+    function Drized:ChangeColor(prope,color)
         if prope == "Background" then
             themeList.Background = color
         elseif prope == "SchemeColor" then
@@ -2642,4 +2642,4 @@ function Kavo.CreateLib(kavName, themeList)
     end  
     return Tabs
 end
-return Kavo
+return Drized
